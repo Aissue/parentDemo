@@ -12,9 +12,10 @@ public class MyController {
     private IMyInterfence myInterfence;
 
     @RequestMapping(value = "/test.do")
-    public void getTest(){
+    public String getTest(){
         System.out.println("消费方开始了...");
         String str = myInterfence.helloWorld();
         System.out.println(str);
+        return "welcome";
     }
 }

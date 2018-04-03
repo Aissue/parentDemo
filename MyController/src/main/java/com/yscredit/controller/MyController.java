@@ -7,6 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Controller
 public class MyController {
 
@@ -28,7 +31,11 @@ public class MyController {
                 = DubboCache.REFERENCECONFIGS.get("com.yscredit.interfence.IMyInterfence").get();
         Object result = null;
         if(genericService != null){
-            result = genericService.$invoke("helloWorld",new String[]{},new String[]{});
+            Map<String,String> map = new HashMap<String,String>();
+            map.put("name","aissue");
+            map.put("age","27");
+            result = genericService.$invoke("helloWorld",new String[]{},new Object[]{});
+//            result = genericService.$invoke("helloWorld",new String[]{"com.yscredit.controller.UserVo"},new Object[]{map});
         }
         return result.toString();
     }

@@ -1,6 +1,7 @@
 package com.yscredit.service;
 
 import com.alibaba.dubbo.rpc.*;
+import com.yscredit.interfence.UserVo;
 
 import java.util.Iterator;
 import java.util.Map;
@@ -15,11 +16,15 @@ public class dubboFilter implements Filter {
         Object object[] = invocation.getArguments();
         Map<String, String> map = invocation.getAttachments();
         System.out.println(object.length);
-        System.out.println(map.size());
+        for(Object o : object){
+            UserVo vo = (UserVo)o;
+            System.out.println("==="+vo.getName());
+        }
+        /*System.out.println(map.size());
         Set<String> set = map.keySet();
         for(String str : set){
             System.out.println(str+":"+map.get(str));
-        }
+        }*/
         return res;
     }
 }

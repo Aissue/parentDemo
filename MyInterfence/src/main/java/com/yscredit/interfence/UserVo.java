@@ -1,10 +1,10 @@
-package com.yscredit.controller;
+package com.yscredit.interfence;
 
-public class UserVo {
+import java.io.Serializable;
+
+public class UserVo implements Serializable{
     public String name;
     public String age;
-
-    UserVo(){}
 
     public String getName() {
         return name;

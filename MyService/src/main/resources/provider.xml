@@ -13,12 +13,12 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd"
         default-lazy-init="false" >
 
-    <bean id="myInterfence" class="com.yscredit.service.MyInterfenceImpl"></bean>
-
     <dubbo:application name="dubbo_provider"></dubbo:application>
-
     <dubbo:registry address="zookeeper://10.1.1.147:2181" check="false" subscribe="false" ></dubbo:registry>
 
-    <dubbo:service interface="com.yscredit.interfence.IMyInterfence" ref="myInterfence" />
+    <!--<dubbo:service interface="com.yscredit.interfence.IMyInterfence" ref="myInterfence" />-->
+    <!--<bean id="myInterfence" class="com.yscredit.service.MyInterfenceImpl"></bean>-->
+    <dubbo:annotation package="com.yscredit.service"/>
+    <!--<dubbo:provider filter="dubboFilter"/>-->
 
 </beans>

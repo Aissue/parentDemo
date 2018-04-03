@@ -19,6 +19,8 @@
     <!--<dubbo:service interface="com.yscredit.interfence.IMyInterfence" ref="myInterfence" />-->
     <!--<bean id="myInterfence" class="com.yscredit.service.MyInterfenceImpl"></bean>-->
     <dubbo:annotation package="com.yscredit.service"/>
-    <!--<dubbo:provider filter="dubboFilter"/>-->
+    <dubbo:provider filter="dubboFilter">
+
+</dubbo:provider>
 
 </beans>
